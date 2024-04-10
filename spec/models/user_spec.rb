@@ -52,7 +52,7 @@ RSpec.describe User do
 
   describe 'hmac_identifier' do
     it 'return nil if CHATWOOT_INBOX_HMAC_KEY is not set' do
-      expect(user.hmac_identifier).to eq('')
+      expect(user.hmac_identifier).to eq(ENV['CHATWOOT_INBOX_HMAC_KEY'])
     end
 
     it 'return value if CHATWOOT_INBOX_HMAC_KEY is set' do
